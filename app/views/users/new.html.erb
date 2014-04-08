@@ -1,0 +1,39 @@
+<%= provide(:title, 'Signup') %>
+
+<div class="center hero-unit">
+	<h1>Signup</h1>
+	<!--<p>Find me in app/views/users/new.html.erb</p>-->
+	<div>
+		<% if !@user.nil? %>
+			<% form_for @user do |form| %>
+			<ol class="formList">
+				<li>
+					<%= form.label :fullname, "Fullname" %>
+					<%= form.text_field :full_name %>
+				</li>
+				<li>
+					<%= form.label :email, "Email Address" %>
+					<%= form.text_field :email %>
+				</li>
+				<li>
+					<%= form.label :password, "Password" %>
+					<%= form.password_field :password %>
+				</li>
+			</ol>
+			<% end %>
+		<% else %>
+			<p>			
+				<label for="full_name">Full Name</label>
+				<input type="text" name="full_name" />
+			</p>
+			<p>
+				<label for="email">Email Address</label>
+				<input type="text" name="email" />
+			</p>
+			<p>
+				<label for="password">Password</label>
+				<input type="password" name="password" />
+			</p>
+		<% end %>
+	</div>
+</div>
